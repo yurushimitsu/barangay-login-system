@@ -1,0 +1,53 @@
+.carousel-item {
+    height: 30rem;
+    background: black;
+    color: white;
+    position: relative;
+}
+
+body{
+    background-color: #EDEDED;
+}
+
+.overlay-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.img1 {
+    background-image: url("Pics/barangay.png");
+}
+
+.img2 {
+    background-image: url("Pics/ayuda.jpg");
+}
+
+.img3 {
+    background-image: url("Pics/vaccine.jpg");
+}
+
+.container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.marketing{
+    position: relative;
+    margin-top: 50px;
+}
+
+.carousel {
+    padding-bottom: 50px;
+}
+
+.col-lg-12 {
+    text-align: center;
+}

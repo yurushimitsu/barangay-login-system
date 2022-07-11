@@ -1,0 +1,30 @@
+.jumbotron {
+    background: black;
+    position: relative;
+    height: 10rem;
+}
+
+.overlay-image {
+    background-image: url("Pics/barangay.png");
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-position: 0 45%;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+
+.white {
+    position: absolute;
+    bottom: 25%;
+    left: 0;
+    right: 0;
+    color: white;
+}
+
+body {
+    background-color:  #EDEDED;
+}
