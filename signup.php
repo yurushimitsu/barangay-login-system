@@ -1,9 +1,64 @@
+<?php
+    $host = "localhost:3306";
+    $user = "root";
+    $password = "";
+    $db = "ojt_website";
+
+    $conn = new mysqli($host, $user, $password, $db);
+
+    if($conn === false){
+        die("Connection Error");
+    }
+
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+        $confirm_password = $_POST["confirm_password"];
+
+        if ($password == $confirm_password) {
+          $conn->query("INSERT INTO `login`(`usertype`,`username`, `password`) VALUES ('user','$username','$password')");
+
+          echo '
+            <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+            <script>
+              $(this).ready(function () {
+                Swal.fire({
+                  icon: "success",
+                  title: "Signup Successfully!",
+                  showCloseButton: true,
+                  showCancelButton: false,
+                  showConfirmButton: false,
+                })
+              })
+            </script>
+          ';
+        }
+
+        else {
+          echo '
+            <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+            <script>
+              $(this).ready(function () {
+                Swal.fire({
+                  title: "Oops...",
+                  icon: "error",
+                  text: "Password Not Match!",
+                  showCloseButton: true,
+                  showCancelButton: false,
+                  showConfirmButton: false,
+                })
+              })
+            </script>';
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Signup</title>
         
   <link rel="icon" href="Pics/Barangay.svg">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -11,9 +66,6 @@
   <link rel="stylesheet" href="login.css">
 </head>
 <body>
-  <?php
-    include("loginCode.php");
-  ?>
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-0 bg-white border-bottom shadow-lg">
     <a class="my-0 mr-md-auto font-weight-bolder text-dark text-decoration-none" href="index.html">
       <img src="Pics/Barangay.svg" height="40"> Barangay E-System
@@ -53,12 +105,23 @@
                     </div>
                   </div>
                   <label>Password</label>
-                  </div> 
+                </div>  
+                <div class="form-floating mb-3">
+                  <div class="input-group">
+                    <input type="password" class="form-control" name="confirm_password" id="password" required>
+                    <div class="input-group-append">
+                      <span class="input-group-text">
+                        <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                      </span>
+                    </div>
+                  </div>
+                  <label>Confirm Password</label>
+                </div> 
                 <div class="d-grid mb-2">
-                  <button class="btn btn-lg btn-primary btn-login fw-bold" type="submit">LOGIN</button>
+                  <button class="btn btn-lg btn-primary btn-login fw-bold" type="submit">SIGNUP</button>
                 </div>
                 <br>
-                <a class="d-block text-center mt-2 small" href="signup.php">Don't have an account? Register</a>
+                <a class="d-block text-center mt-2 small" href="login.php">Have an account? Login</a>
               </form>
           </div> 
         </div>

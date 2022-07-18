@@ -1,3 +1,6 @@
+<?php
+  include("redirect.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +61,7 @@
                     <h2 >Barangay 636</h2>
                     <div class="btn-toolbar mb-2 mb-md-0">
                     <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                       <i class="far fa-calendar"></i> This week
+                       <i class="far fa-calendar"></i> This Month
                     </button>
                     </div>
                 </div>
