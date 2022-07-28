@@ -131,6 +131,6 @@
 </body> 
 </html>
 
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="showPass.js"></script>

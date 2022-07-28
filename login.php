@@ -1,3 +1,6 @@
+<?php
+    include("loginCode.php");
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +14,7 @@
   <link rel="stylesheet" href="login.css">
 </head>
 <body>
-  <?php
-    include("loginCode.php");
-  ?>
+  
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-0 bg-white border-bottom shadow-lg">
     <a class="my-0 mr-md-auto font-weight-bolder text-dark text-decoration-none" href="index.html">
       <img src="Pics/Barangay.svg" height="40"> Barangay E-System
@@ -68,6 +69,6 @@
 </body> 
 </html>
 
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="showPass.js"></script>
