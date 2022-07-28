@@ -21,16 +21,17 @@
 	    $result = mysqli_query($data,$sql);
         $row = mysqli_fetch_array($result);
 
-        if($row["usertype"] == "user") {	
-            $_SESSION["username"]=$username;
-            header("location:userHome.php");
-        }
+        if (!is_null($row)) {
+            if($row["usertype"] == "user") {	
+                $_SESSION["username"]=$username;
+                header("location:userHome.php");
+            }
 
-        elseif($row["usertype"] == "admin") {
-            $_SESSION["username"] = $username;
-            header("location:adminHome.php");
+            elseif($row["usertype"] == "admin") {
+                $_SESSION["username"] = $username;
+                header("location:adminHome.php");
+            }
         }
-
         else {
             echo '
                 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
